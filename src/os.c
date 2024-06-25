@@ -7,6 +7,8 @@
 
 #include "os_common.c"
 
+void led_set(unsigned char bits) { *LED = bits; }
+
 void uart_send_str(const char *str) {
   while (*str) {
     while (*UART_OUT)

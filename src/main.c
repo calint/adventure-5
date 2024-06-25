@@ -1,3 +1,6 @@
+//
+// source file for console build
+//
 #include <stdio.h>
 #include <termios.h>
 #include <unistd.h>
@@ -9,7 +12,7 @@
 int main() {
   struct termios tm;
   tcgetattr(STDIN_FILENO, &tm);
-  tm.c_lflag &= ~(ICANON | ECHO);
+  tm.c_lflag &= ~(unsigned)(ICANON | ECHO);
   tcsetattr(STDIN_FILENO, TCSANOW, &tm);
 
   run();
@@ -25,7 +28,7 @@ void uart_send_char(const char ch) {
 
 void uart_send_str(const char *str) { printf("%s", str); }
 
-char uart_read_char() { return getchar(); }
+char uart_read_char() { return (char)getchar(); }
 
 void led_set(unsigned char bits) {}
 
