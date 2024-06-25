@@ -11,7 +11,7 @@ gcc -o $BIN -O0 -g -Wall -Wextra -pedantic \
     -Wconversion \
     -Wshadow \
     -Wno-unused-parameter \
-    main.c
+    console-application.c
 
 ls -l $BIN
 

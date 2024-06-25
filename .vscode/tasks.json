@@ -5,7 +5,7 @@
             "type": "shell",
             "command": "sh",
             "args": [
-                "src/make-console.sh"
+                "src/make-console-application.sh"
             ],
             "group": {
                 "kind": "build",

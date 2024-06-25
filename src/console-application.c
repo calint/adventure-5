@@ -1,5 +1,5 @@
 //
-// source file for console build
+// source for console build
 //
 #include <stdio.h>
 #include <termios.h>
@@ -19,7 +19,7 @@ int main() {
 }
 
 void uart_send_char(const char ch) {
-  if (ch == 127) {
+  if (ch == CHAR_BACKSPACE) {
     printf("\b \b");
   } else {
     putchar(ch);
